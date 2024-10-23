@@ -1,0 +1,430 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  max-width: 144rem;
+  margin: 0 auto;
+  font-family: "Ubuntu", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* min-height: 100vh; */
+  margin-top: 10.5rem;
+  background-color: hsl(217, 100%, 97%);
+}
+.main {
+  max-width: 94rem;
+  width: 80rem;
+  height: 60rem;
+  /* max-width: 65.27%; */
+  /* height: 60rem; */
+  background-color: hsl(0, 0%, 100%);
+  /* padding: 1.6rem; */
+  /* padding-bottom: 0.3rem; */
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+  border-radius: 1.5rem;
+  box-shadow: -5px 5px 20px 0px #9699ab41;
+  gap: 1.8rem;
+}
+.step-container {
+  background-image: url(/assets/images/bg-sidebar-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.8rem;
+  height: 100%; /* Ensure it fills the entire sidebar */
+  padding: 0 2.4rem;
+  padding-top: 1.8rem;
+  overflow: hidden;
+}
+
+.step-item {
+  display: flex;
+  gap: 1.8rem;
+  cursor: pointer;
+}
+.step-number {
+  width: 3.5rem; /* Fixed width for the circle */
+  height: 3.5rem; /* Fixed height for the circle */
+  padding: 0; /* Remove padding */
+  border: 2px solid hsl(217, 100%, 97%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center; /* Center the number vertically */
+  justify-content: center; /* Center the number horizontally */
+  font-size: 1.6rem; /* Slightly larger for better readability */
+  color: hsl(217, 100%, 97%);
+  font-weight: 700;
+}
+.step-active {
+  color: hsl(210, 7%, 5%);
+  background-color: hsl(206, 94%, 87%);
+  border: 2px solid hsl(206, 94%, 87%);
+}
+.step-info {
+  width: 12rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.step-heading {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  color: hsl(231, 11%, 63%);
+}
+.step-tasks {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1.4px;
+  color: hsl(217, 100%, 97%);
+}
+
+.form-container {
+  width: 100%;
+  display: none;
+  /* display: flex;
+  flex-direction: column; */
+
+  padding: 1.2rem 0;
+}
+.form_content__active {
+  display: flex;
+  flex-direction: column;
+}
+/* .form-subcontainer {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+} */
+.main-container {
+  padding: 1.2rem 0;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.form-heading {
+  font-size: 3.2rem;
+  color: hsl(213, 96%, 18%);
+  margin-bottom: 0.8rem;
+}
+.form-subheading {
+  font-size: 1.6rem;
+  color: hsl(231, 11%, 63%);
+  line-height: 1.6;
+  margin-bottom: 2.4rem;
+}
+.error-message {
+  color: red;
+}
+.form-lists {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+.information {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+label {
+  font-size: 1.4rem;
+  color: hsl(213, 96%, 18%);
+}
+input {
+  position: relative;
+  padding: 1.4rem 0;
+  border-radius: 0.8rem;
+  font-family: inherit;
+  font-size: 1.6rem;
+  font-weight: 500;
+  border: 1px solid hsl(229, 24%, 87%);
+  padding-left: 1.4rem;
+  margin-right: 5rem;
+}
+input::placeholder {
+  color: hsl(231, 11%, 63%);
+}
+
+.error-message {
+  position: absolute;
+  top: -4%;
+  right: 2%;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: hsl(354, 84%, 57%);
+}
+.btn-container {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  max-width: 90%;
+  /* position: absolute;
+  transform: translateY(217%); */
+}
+.next-step {
+  font-family: inherit;
+  font-size: 1.6rem;
+  font-weight: 500;
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(231, 11%, 63%);
+  border: none;
+  cursor: pointer;
+}
+.previous-step {
+  font-family: inherit;
+  padding: 1.4rem 2.4rem;
+  margin-left: auto;
+  font-size: 1.6rem;
+  font-weight: 500;
+  background-color: hsl(213, 96%, 18%);
+  color: hsl(217, 100%, 97%);
+  border: 1px solid hsl(213, 96%, 18%);
+  border-radius: 0.9rem;
+  cursor: pointer;
+}
+.plan-lists {
+  margin-top: 2.8rem;
+  display: flex;
+  gap: 2.4rem;
+}
+.plan {
+  display: flex;
+  border-radius: 15px;
+  border: 1px solid hsl(231, 11%, 63%);
+  flex-direction: column;
+  width: 12rem;
+  padding: 0.8rem 1rem;
+  gap: 2.4rem;
+}
+.plan__active,
+.plan:hover {
+  border: 1px solid hsl(354, 84%, 57%);
+}
+
+.icon-plan {
+  height: 3.8rem;
+  width: 3.8rem;
+}
+.plan-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.plan-title {
+  font-size: 1.4rem;
+  display: block;
+  font-weight: 600;
+  line-height: 1.5rem;
+}
+.plan-price {
+  font-size: 1.1rem;
+  color: hsl(229, 24%, 87%);
+  font-weight: 400;
+}
+.switch-checkbox {
+  margin-top: 1.4rem;
+}
+.switch {
+  background-color: black;
+  display: inline-block;
+  position: relative;
+  padding: 0 1.4rem;
+  border-radius: 15px;
+  height: 1.2rem;
+  z-index: 1;
+}
+.switch-option {
+  font-weight: 600;
+}
+.switch-option {
+  color: hsl(231, 11%, 63%);
+}
+.switch-option-active {
+  color: hsl(0, 0%, 2%);
+}
+.switch-checkbox > div {
+  display: flex;
+  flex-direction: row;
+  gap: 1.4rem;
+  justify-content: center;
+  align-items: center;
+}
+.switch-indication {
+  position: absolute;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 50px;
+  height: 0.8rem;
+  width: 0.8rem;
+  top: 0.2rem;
+  left: 0.2rem;
+  z-index: 8;
+}
+.switch-annualy {
+  transform: translateX(200%);
+}
+.add-ons__container {
+  display: flex;
+  flex-direction: column;
+  max-width: 45rem;
+  gap: 1.6rem;
+  justify-content: center;
+  align-items: center;
+}
+.add_ons {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 7fr 2fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  align-items: center;
+  border: 1px solid hsl(229, 24%, 87%);
+  border-radius: 0.7rem;
+  padding: 1.2rem;
+  padding-bottom: 0.7rem;
+  cursor: pointer;
+}
+.checkbox {
+  margin-left: 1.1rem;
+  grid-row: 2/3;
+  height: 2rem;
+  width: 2rem;
+  cursor: pointer;
+  pointer-events: none;
+}
+.add_ons.active {
+  border: 1px solid hsl(213, 96%, 35%);
+}
+.add-ons__title {
+  grid-column: 2/3;
+  grid-row: 1/3;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: hsl(213, 96%, 18%);
+  margin-left: 1.9rem;
+  margin-bottom: 0.8rem;
+}
+.add-ons__description {
+  grid-column: 2/3;
+  grid-row: 2/4;
+  font-size: 1.4rem;
+  color: hsl(231, 11%, 63%);
+  margin-left: 2rem;
+}
+.add-ons__cost {
+  grid-column: -1;
+  grid-row: 2/3;
+  font-size: 1.4rem;
+  color: hsl(213, 96%, 35%);
+  margin-right: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+/* ************** section 4 *******************/
+.billing__container {
+  max-width: 45rem;
+  background-color: hsl(231, 100%, 98%);
+  border-radius: 0.6rem;
+  padding: 0 2rem 2.5rem 2rem;
+}
+.selected__plan {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+.selected__plan--name {
+  font-size: 1.6rem;
+  color: hsl(213, 96%, 18%);
+  font-weight: 500;
+  grid-column: 1/-1;
+  grid-row: 2/3;
+  margin-left: 0.4rem;
+  margin-top: -0.55rem;
+}
+.change {
+  grid-column: 1;
+  grid-row: 3/4;
+  font-size: 1.4rem;
+  color: hsl(231, 11%, 63%);
+  margin-left: 0.4rem;
+  margin-top: -0.7rem;
+}
+.change:active {
+  color: hsl(246, 100%, 76%);
+  font-weight: 500;
+}
+.selected__plan--cost {
+  grid-column: 3;
+  grid-row: 2;
+  font-size: 1.6rem;
+  color: hsl(213, 96%, 18%);
+  font-weight: 700;
+  margin-top: 0.68rem;
+  margin-right: 0.6rem;
+}
+.line {
+  width: 100%;
+  border-top: 1px solid hsl(229, 24%, 87%);
+  margin-top: 0.9rem;
+}
+.selected__add-ons {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  gap: 2rem;
+  margin-top: 1.9rem;
+  margin-left: 0.4rem;
+}
+.add-ons__summary {
+  display: flex;
+  justify-content: space-between;
+}
+.selected__add-ons--name {
+  font-size: 1.4rem;
+  color: hsl(231, 11%, 63%);
+}
+.selected__add-ons--cost {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: hsl(213, 96%, 21%);
+  margin-right: 0.6rem;
+}
+.total-container {
+  max-width: 45rem;
+  display: flex;
+  justify-content: space-between;
+}
+.total--name {
+  font-size: 1.4rem;
+  color: hsl(231, 11%, 63%);
+  margin-left: 2.4rem;
+  margin-top: 3rem;
+}
+.total-cost {
+  font-size: 2rem;
+  font-weight: 700;
+  color: hsl(243, 100%, 62%);
+  margin-right: 2.5rem;
+  margin-top: 2.4rem;
+}
+.btn__hidden {
+  visibility: hidden;
+}
+.btn__confirm {
+  background-color: hsl(246, 100%, 76%);
+  border-color: hsl(246, 100%, 76%);
+  color: hsl(217, 100%, 97%);
+}

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Multi-step form</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main class="main">
+      <!-- this section is about steps in the side bar -->
+      <section class="step-container">
+        <div class="step-item" data-stepNumber="1">
+          <div class="step-number step-active" data-step="1">1</div>
+          <div class="step-info">
+            <span class="step-heading">STEP 1</span>
+            <span class="step-tasks">YOUR INFO</span>
+          </div>
+        </div>
+
+        <div class="step-item" data-stepNumber="2">
+          <div class="step-number" data-step="2">2</div>
+          <div class="step-info">
+            <span class="step-heading">STEP 2</span>
+            <span class="step-tasks">SELECT PLAN</span>
+          </div>
+        </div>
+        <div class="step-item" data-stepNumber="3">
+          <div class="step-number" data-step="3">3</div>
+          <div class="step-info">
+            <span class="step-heading">STEP 3</span>
+            <span class="step-tasks">ADD-ONS</span>
+          </div>
+        </div>
+        <div class="step-item" data-stepNumber="4">
+          <div class="step-number" data-step="4">4</div>
+          <div class="step-info">
+            <span class="step-heading">STEP 4</span>
+            <span class="step-tasks">SUMMARY</span>
+          </div>
+        </div>
+        <!--you can add more steps here-->
+      </section>
+      <section class="main-container">
+        <!-- this section is about the main (user input)-->
+
+        <section
+          class="form-container form__content__step1 form_content__active"
+          data-stepNumber="1"
+        >
+          <span class="form-heading">Personal Info</span>
+          <span class="form-subheading"
+            >Please provide your name, email adress and phone number</span
+          >
+          <div class="form-lists">
+            <div class="information">
+              <label for="name">Name</label>
+              <input
+                required="text"
+                placeholder="e.g. Stephen King"
+                id="name"
+              />
+              <span class="error-message error-name"></span>
+            </div>
+            <div class="information">
+              <label for="email">Email Address</label>
+              <input
+                required
+                type="email"
+                placeholder="e.g. stephenking@lorem.com"
+                id="email"
+              />
+              <span class="error-message error-email"></span>
+            </div>
+            <div class="information">
+              <label for="num">Phone Number</label>
+              <input
+                required
+                type="number"
+                placeholder="e.g. +1 234 567 890"
+                id="num"
+              />
+              <span class="error-message error-phone"></span>
+            </div>
+          </div>
+        </section>
+
+        <!--select your plan section-->
+        <section
+          class="form-container form__content__step2"
+          data-stepNumber="2"
+        >
+          <span class="form-heading">Select your plan</span>
+          <span class="form-subheading"
+            >you have the option of monthly or yearly billing</span
+          >
+          <div class="plan-lists">
+            <div class="plan plan__active option__1" data-planOption="1">
+              <img src="/assets/images/icon-arcade.svg" class="icon-plan" />
+              <div class="plan-details">
+                <span class="plan-title">Arcade</span>
+                <span class="plan-price">$9/mo</span>
+              </div>
+            </div>
+            <div class="plan option__2" data-planOption="2">
+              <img src="/assets/images/icon-advanced.svg" class="icon-plan" />
+              <div class="plan-details">
+                <span class="plan-title">Advanced</span>
+                <span class="plan-price">$12/mo</span>
+              </div>
+            </div>
+            <div class="plan option__3" data-planOption="3">
+              <img src="/assets/images/icon-pro.svg" class="icon-plan" />
+              <div class="plan-details">
+                <span class="plan-title">Pro</span>
+                <span class="plan-price">$15/mo</span>
+              </div>
+            </div>
+          </div>
+          <div class="switch-checkbox">
+            <div>
+              <span class="switch-option switch-option-active option-monthly"
+                >Monthly</span
+              >
+              <div class="switch">
+                <div class="switch-indication"></div>
+              </div>
+              <span class="switch-option option-annualy">Year</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- ******************section 3***********************-->
+
+        <section
+          class="form-container form__content__step3"
+          data-stepNumber="3"
+        >
+          <span class="form-heading">Select your plan</span>
+          <span class="form-subheading"
+            >you have the option of monthly or yearly billing</span
+          >
+          <div class="add-ons__container">
+            <div class="add_ons online-service" data-addOn="1">
+              <input class="checkbox" type="checkbox" />
+              <p class="add-ons__title">Online service</p>
+              <p class="add-ons__description">Access to multiplayer games</p>
+              <p class="plan-cost add-ons__cost">+$1/mo</p>
+            </div>
+            <div class="add_ons larger-storage" data-addOn="2">
+              <input class="checkbox" type="checkbox" />
+              <p class="add-ons__title">Larger storage</p>
+              <p class="add-ons__description">Extra 1TB of cloud save</p>
+              <p class="plan-cost add-ons__cost">+$2/mo</p>
+            </div>
+            <div class="add_ons customizable-profile" data-addOn="3">
+              <input class="checkbox" type="checkbox" />
+              <p class="add-ons__title">Customizable profile</p>
+              <p class="add-ons__description">Custom theme on your profile</p>
+              <p class="plan-cost add-ons__cost">+$2/mo</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ************************* section 4 include the summary *********************-->
+        <section
+          class="form-container form__content__step4"
+          data-stepNumber="4"
+        >
+          <span class="form-heading">Summary</span>
+          <span class="form-subheading">summary</span>
+          <div class="billing__container">
+            <div class="selected__plan">
+              <!-- <p class="selected__plan--name">
+                Arcade <span>(</span><span class="period__name">Month</span>ly)
+              </p>
+              <a href="#" class="change">Change</a>
+              <p class="plan-cost selected__plan--cost">$9/mo</p> -->
+            </div>
+            <div class="line"></div>
+            <div class="selected__add-ons">
+              <!-- <div class="add-ons__summary online-service__add-ons">
+                <p class="selected__add-ons--name">Online service</p>
+                <p class="plan-cost selected__add-ons--cost">+$1/mo</p>
+              </div>
+              <div class="add-ons__summary larger-storage__add-ons">
+                <p class="selected__add-ons--name">Larger storage</p>
+                <p class="plan-cost selected__add-ons--cost">+$2/mo</p>
+              </div>
+              <div class="add-ons__summary customize-profile__add-ons">
+                <p class="selected__add-ons--name">Customizable Profile</p>
+                <p class="plan-cost selected__add-ons--cost">+$2/mo</p>
+              </div> -->
+            </div>
+          </div>
+          <div class="total-container">
+            <!-- <p class="total--name">
+              Total (per <span class="period__name">month</span>)
+            </p>
+            <p class="total-cost">
+              $<span class="total-num">12</span
+              ><span class="total-period">/mo</span>
+            </p> -->
+          </div>
+        </section>
+        <div class="btn-container">
+          <button class="btn next-step" data-btntab="1">Go back</button>
+          <button class="btn previous-step" data-btntab="2">Next step</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
